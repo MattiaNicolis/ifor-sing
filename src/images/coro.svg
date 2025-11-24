@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="600" viewBox="0 0 1200 600"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Coro stilizzato con direttore</title>
+  <desc id="desc">Rappresentazione stilizzata di un coro con tre file di cantori, un direttore e note musicali.</desc>
+
+  <defs>
+    <!-- gradiente per sfondo palco -->
+    <linearGradient id="stageGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8f5ff"/>
+      <stop offset="1" stop-color="#efe8ff"/>
+    </linearGradient>
+
+    <!-- gradiente per vestiti -->
+    <linearGradient id="robeGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#3b5bdb"/>
+      <stop offset="1" stop-color="#1f3bb8"/>
+    </linearGradient>
+
+    <!-- simbolo nota musicale -->
+    <symbol id="note" viewBox="0 0 24 24">
+      <path d="M17 3v10.55A4 4 0 1 0 15 17V7h-4V5h6z" />
+    </symbol>
+
+    <!-- stile testuale interno -->
+    <style>
+      .stage { fill: url(#stageGrad); }
+      .floor { fill: #e6dff8; }
+      .robe { fill: url(#robeGrad); }
+      .skin { fill: #f7d6c3; }
+      .hair { fill: #2f2f2f; }
+      .sheet { fill: #fff; stroke: #ddd; stroke-width: 1; }
+      .staff { stroke: #bbb; stroke-width: 1.2; stroke-linecap: round; }
+      .note { fill: #444; opacity: 0.95; transform-origin: center; }
+      .conductor { fill: #222; }
+      .shadow { fill: rgba(0,0,0,0.06); }
+    </style>
+  </defs>
+
+  <!-- Sfondo palco -->
+  <rect x="0" y="0" width="1200" height="600" class="stage" />
+
+  <!-- Pavimento (platea) -->
+  <rect x="0" y="400" width="1200" height="200" class="floor" />
+
+  <!-- Ombre dei gruppi -->
+  <ellipse cx="600" cy="420" rx="420" ry="40" class="shadow" />
+
+  <!-- Gruppo cantori: funzione grafica (3 file) -->
+  <!-- File più lontana (più piccola) -->
+  <g id="row-back" transform="translate(0, -40)" opacity="0.95">
+    <!-- posizionamento orizzontale: 8 cantori -->
+    <!-- singolo cantante come group template -->
+    <!-- per aggiungere/rimuovere cantori: copiare o cancellare <g class="singer"> -->
+    <g class="singer" transform="translate(120,160)">
+      <circle cx="0" cy="0" r="18" class="skin"/>
+      <rect x="-14" y="20" width="28" height="34" rx="4" class="robe"/>
+      <rect x="-12" y="24" width="24" height="6" class="sheet"/>
+      <!-- staff lines -->
+      <g transform="translate(-10,30)">
+        <line x1="0" y1="0" x2="24" y2="0" class="staff"/>
+        <line x1="0" y1="4" x2="24" y2="4" class="staff"/>
+      </g>
+    </g>
+
+    <!-- duplico orizzontalmente -->
+    <use href="#row-back" x="120" y="0" transform="translate(120,0)"/>
+  </g>
+
+  <!-- File centrale -->
+  <g id="row-mid" transform="translate(0,0)">
+    <!-- crea 7 cantori con trasformazioni x -->
+    <!-- useremo gruppi espliciti per avere controllo su spaziatura -->
+    <g class="singer" transform="translate(140,250)">
+      <circle cx="0" cy="0" r="22" class="skin"/>
+      <rect x="-16" y="26" width="32" height="44" rx="5" class="robe"/>
+      <rect x="-14" y="30" width="28" height="8" class="sheet"/>
+      <g transform="translate(-12,36)">
+        <line x1="0" y1="0" x2="28" y2="0" class="staff"/>
+        <line x1="0" y1="5" x2="28" y2="5" class="staff"/>
+      </g>
+    </g>
+
+    <g class="singer" transform="translate(280,250)">
+      <circle cx="0" cy="0" r="22" class="skin"/>
+      <rect x="-16" y="26" width="32" height="44" rx="5" class="robe"/>
+      <rect x="-14" y="30" width="28" height="8" class="sheet"/>
+      <g transform="translate(-12,36)">
+        <line x1="0" y1="0" x2="28" y2="0" class="staff"/>
+        <line x1="0" y1="5" x2="28" y2="5" class="staff"/>
+      </g>
+    </g>
+
+    <g class="singer" transform="translate(420,250)">
+      <circle cx="0" cy="0" r="22" class="skin"/>
+      <rect x="-16" y="26" width="32" height="44" rx="5" class="robe"/>
+      <rect x="-14" y="30" width="28" height="8" class="sheet"/>
+      <g transform="translate(-12,36)"><line x1="0" y1="0" x2="28" y2="0" class="staff"/><line x1="0" y1="5" x2="28" y2="5" class="staff"/></g>
+    </g>
+
+    <g class="singer" transform="translate(560,250)">
+      <circle cx="0" cy="0" r="22" class="skin"/>
+      <rect x="-16" y="26" width="32" height="44" rx="5" class="robe"/>
+      <rect x="-14" y="30" width="28" height="8" class="sheet"/>
+      <g transform="translate(-12,36)"><line x1="0" y1="0" x2="28" y2="0" class="staff"/><line x1="0" y1="5" x2="28" y2="5" class="staff"/></g>
+    </g>
+
+    <g class="singer" transform="translate(700,250)">
+      <circle cx="0" cy="0" r="22" class="skin"/>
+      <rect x="-16" y="26" width="32" height="44" rx="5" class="robe"/>
+      <rect x="-14" y="30" width="28" height="8" class="sheet"/>
+      <g transform="translate(-12,36)"><line x1="0" y1="0" x2="28" y2="0" class="staff"/><line x1="0" y1="5" x2="28" y2="5" class="staff"/></g>
+    </g>
+
+    <g class="singer" transform="translate(840,250)">
+      <circle cx="0" cy="0" r="22" class="skin"/>
+      <rect x="-16" y="26" width="32" height="44" rx="5" class="robe"/>
+      <rect x="-14" y="30" width="28" height="8" class="sheet"/>
+      <g transform="translate(-12,36)"><line x1="0" y1="0" x2="28" y2="0" class="staff"/><line x1="0" y1="5" x2="28" y2="5" class="staff"/></g>
+    </g>
+  </g>
+
+  <!-- File frontale (più grande) -->
+  <g id="row-front" transform="translate(0,40)">
+    <g class="singer" transform="translate(200,340)">
+      <circle cx="0" cy="0" r="24" class="skin"/>
+      <rect x="-18" y="28" width="36" height="50" rx="6" class="robe"/>
+      <rect x="-16" y="34" width="32" height="10" class="sheet"/>
+      <g transform="translate(-14,44)"><line x1="0" y1="0" x2="32" y2="0" class="staff"/><line x1="0" y1="6" x2="32" y2="6" class="staff"/></g>
+    </g>
+
+    <g class="singer" transform="translate(360,340)">
+      <circle cx="0" cy="0" r="24" class="skin"/>
+      <rect x="-18" y="28" width="36" height="50" rx="6" class="robe"/>
+      <rect x="-16" y="34" width="32" height="10" class="sheet"/>
+      <g transform="translate(-14,44)"><line x1="0" y1="0" x2="32" y2="0" class="staff"/><line x1="0" y1="6" x2="32" y2="6" class="staff"/></g>
+    </g>
+
+    <g class="singer" transform="translate(520,340)">
+      <circle cx="0" cy="0" r="24" class="skin"/>
+      <rect x="-18" y="28" width="36" height="50" rx="6" class="robe"/>
+      <rect x="-16" y="34" width="32" height="10" class="sheet"/>
+      <g transform="translate(-14,44)"><line x1="0" y1="0" x2="32" y2="0" class="staff"/><line x1="0" y1="6" x2="32" y2="6" class="staff"/></g>
+    </g>
+
+    <g class="singer" transform="translate(680,340)">
+      <circle cx="0" cy="0" r="24" class="skin"/>
+      <rect x="-18" y="28" width="36" height="50" rx="6" class="robe"/>
+      <rect x="-16" y="34" width="32" height="10" class="sheet"/>
+      <g transform="translate(-14,44)"><line x1="0" y1="0" x2="32" y2="0" class="staff"/><line x1="0" y1="6" x2="32" y2="6" class="staff"/></g>
+    </g>
+
+    <g class="singer" transform="translate(840,340)">
+      <circle cx="0" cy="0" r="24" class="skin"/>
+      <rect x="-18" y="28" width="36" height="50" rx="6" class="robe"/>
+      <rect x="-16" y="34" width="32" height="10" class="sheet"/>
+      <g transform="translate(-14,44)"><line x1="0" y1="0" x2="32" y2="0" class="staff"/><line x1="0" y1="6" x2="32" y2="6" class="staff"/></g>
+    </g>
+  </g>
+
+  <!-- Direttore al centro -->
+  <g id="conductor" transform="translate(600,300)">
+    <circle cx="0" cy="-10" r="26" class="skin"/>
+    <rect x="-22" y="14" width="44" height="80" rx="6" class="conductor"/>
+    <!-- bacchetta -->
+    <rect x="36" y="0" width="6" height="90" rx="3" transform="rotate(20 36 0)" fill="#b38b6d"/>
+    <rect x="40" y="-6" width="32" height="6" rx="3" transform="rotate(-10 40 -6)" fill="#fff"/>
+  </g>
+
+  <!-- Note musicali che salgono -->
+  <g id="notes" transform="translate(840,120)">
+    <use href="#note" class="note" x="-30" y="0" width="28" height="28">
+      <animateTransform attributeName="transform" type="translate"
+                        values="0 0; -10 -40; 0 -80" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.0;1;0.0" dur="4s" repeatCount="indefinite" />
+    </use>
+    <use href="#note" class="note" x="10" y="30" width="20" height="20">
+      <animateTransform attributeName="transform" type="translate"
+                        values="0 0; 8 -30; 0 -60" dur="3s" repeatCount="indefinite" begin="0.6s"/>
+      <animate attributeName="opacity" values="0;0.9;0" dur="3s" repeatCount="indefinite" begin="0.6s"/>
+    </use>
+    <use href="#note" class="note" x="40" y="10" width="24" height="24">
+      <animateTransform attributeName="transform" type="translate"
+                        values="0 0; 12 -50; 0 -100" dur="5s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0;0.95;0" dur="5s" repeatCount="indefinite" begin="1s"/>
+    </use>
+  </g>
+
+  <!-- Leggero bordo palco -->
+  <rect x="0" y="392" width="1200" height="6" fill="#d1c7f0"/>
+
+  <!-- Piccola etichetta (testo) -->
+  <text x="24" y="32" font-family="sans-serif" font-size="18" fill="#3b2b6f">Coro — SVG stilizzato</text>
+</svg>
